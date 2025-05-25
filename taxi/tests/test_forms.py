@@ -26,7 +26,7 @@ class FormsTests(TestCase):
         self.assertTrue(form.is_valid())
 
     def test_driver_search_form_is_valid(self):
-        form = DriverSearchForm(data={"driver": "Bob"})
+        form = DriverSearchForm(data={"username": "bob.ken"})
         self.assertTrue(form.is_valid())
 
     def test_manufacturer_search_form_is_valid(self):
