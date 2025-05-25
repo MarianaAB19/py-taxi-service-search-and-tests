@@ -78,4 +78,7 @@ class PrivateCarTest(TestCase):
             data=form_data
         )
         car.refresh_from_db()
-        self.assertEqual(list(car.drivers.all()), form_data["drivers"])
+        self.assertEqual(
+            list(car.drivers.values_list("id", flat=True)),
+            form_data["drivers"]
+        )
